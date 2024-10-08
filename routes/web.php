@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LivreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +18,28 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/B-Livre', function () {
-    return view('');
+<<<<<<< HEAD
+
+=======
+Route::prefix('/B-Livre')->name('livre.')->controller(LivreController::class)->group(function(){
+
+
+     Route::get('/', function () {
+            return view('');
+      }
+
+     Route::get('/AjouterLivre', 'ajout')->name('ajout') ;
+     Route::post('/AjouterLivre', 'ajout_traitement') ;
+
+     Route::get('/ModifierLivre/{livre}', 'modifier')->name('modif') ;
+     Route::post('/ModifierLivre/{livre}', 'modifier_traitement') ;
+
+     Route::post('/SupprimerLivre/{livre}', 'supprimer') ;
+
+     Route::get('/publication', 'publication')->name('publication') ;
+
+
+>>>>>>> crud-biblio
 });
 
 
