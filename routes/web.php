@@ -18,15 +18,12 @@ use App\Http\Controllers\LivreController;
 //     return view('welcome');
 // });
 
-<<<<<<< HEAD
-
-=======
 Route::prefix('/B-Livre')->name('livre.')->controller(LivreController::class)->group(function(){
 
 
-     Route::get('/', function () {
-            return view('');
-      }
+     Route::get('/', function() {
+            return view('biblio.index');
+      });
 
      Route::get('/AjouterLivre', 'ajout')->name('ajout') ;
      Route::post('/AjouterLivre', 'ajout_traitement') ;
@@ -39,7 +36,6 @@ Route::prefix('/B-Livre')->name('livre.')->controller(LivreController::class)->g
      Route::get('/publication', 'publication')->name('publication') ;
 
 
->>>>>>> crud-biblio
 });
 
 
