@@ -29,11 +29,11 @@ class LivreController extends Controller
     }
     function modifier_traitement(CrudRequest $request, Livre $livre){
         $livre->update($request->validated());
-        return redirect()->route('livre.modifier',[ 'livre'=>$livre ])->with('success','Modification  du livre éffectuer') ;
+        return redirect()->route('livre.modif',[ 'livre'=>$livre ])->with('success','Modification  du livre éffectuer') ;
 
     }
     function publication(){
-            
+
             return view('livre.publication' ,[
 
             ]);
