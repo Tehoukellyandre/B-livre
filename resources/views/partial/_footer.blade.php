@@ -4,7 +4,7 @@
      } */
 </style>
 <footer class="text-white-50">
-    <p>Cover template for <a href="" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+    <p>B-Livre pour <a href="" class="text-white">tous</a>, by <a href="https://twitter.com/kelly_tehou" class="text-white">@Tehou</a>.</p>
   </footer>
 </div>
 

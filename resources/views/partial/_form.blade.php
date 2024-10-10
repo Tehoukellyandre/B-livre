@@ -11,7 +11,9 @@
     <form action="" method="POST">
         @csrf
 
-        <button class="btn btn-outline-warning"> <a href="{{ route('livre.publication') }}"> Voir mes publications</a></button>
+        
+
+        <button class="btn btn-outline-warning"> <a href="{{ route('livre.publication',[ 'userId'=> $userId  ]) }}"> Voir mes publications</a></button>
         <br><br>
         <div class="form-group">
             <label for="titre"  class="form-label">Titre:  <span><font  color="red">*</font></span></label>

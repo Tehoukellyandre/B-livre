@@ -3,9 +3,22 @@
       <div>
         <h3 class="float-md-start mb-0">B-Livre</h3>
         <nav class="nav nav-masthead justify-content-center float-md-end">
-          <a class="nav-link fw-bold py-1 px-0 @ifactive" aria-current="page" href="#">Accueil</a>
-          <a class="nav-link fw-bold py-1 px-0" href="#">Inscription</a>
-          <a class="nav-link fw-bold py-1 px-0" href="#">Connexion</a>
+            <a class="nav-link fw-bold py-1 px-0 @ifactive" aria-current="page" href="{{route('livre.acceuil')}}">Accueil</a>
+          @guest()
+            <a class="nav-link fw-bold py-1 px-0" href="{{ route('Auth.inscription') }}">Inscription</a>
+            <a class="nav-link fw-bold py-1 px-0" href="{{ route('Auth.connexion') }}">Connexion</a>
+          @endguest
+
+          @auth()
+              <a class="nav-link fw-bold py-1 px-0" href="{{ route('livre.store',['userId'=> Auth::user()->id ]) }}">Bibliothque B-Livre</a>
+              <form action="{{route('Auth.deconnexion') }}" method="post">
+                  @method('delete')
+                    @csrf
+
+                    <button class="nav-link fw-bold py-1 px-0" > Déconnexion</button>
+              </form>
+          @endauth
+
         </nav>
       </div>
     </header>

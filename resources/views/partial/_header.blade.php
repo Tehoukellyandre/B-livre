@@ -44,11 +44,14 @@
     a{
         margin-right :15px ;
     }
+    .nav-link {
+         color: orange ;
+    }
 </style>
 <body class=" text-bg-dark">
     {{-- class="d-flex h-100 text-center text-bg-dark" --}}
      @include('partial._nav')
 
 
-    
+
 
