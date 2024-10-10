@@ -21,16 +21,18 @@
             margin-top:80vh;
              margin-left: 80vh;
         }
-        #paire_Button{
+        #triplle_Button{
              margin-top:30px ;
              /* padding-right :150px ; */
         }
-        #magie{
-             margin-right:65px ;
-        }
-        #util{
+
+        #contenu-util{
 
              display:none;
+        }
+        #contenu-comm{
+
+            display:none;
         }
         #util-1-2{
             margin-left: 20% ;
@@ -43,12 +45,14 @@
         #util-1-1{
             padding-right:70px ;
         }
-        #user{
-            margin-left: 57vh ;
-        }
+
         footer{
                margin-top : 56vh
            }
+        li{
+             list-style-type:none ;
+        }
+
     </style>
 </div>
 
@@ -58,39 +62,58 @@
 
 
 
-      <div class="container" id="user">
+      <div class="container" id="user" >
            <font color="orange"> {{ Auth::user()->name }}</font>   - Bienvenue sur B-Livre , choissisez la bibliothèque que vous souhaitez consulter :
       </div>
 
-    <div class="text-center" id="paire_Button">
+    <div class="text-center" id="tripple_Button" class="magie">
 
-        <button  id="communaute" style="margin-right:80px ;" class="btn btn-dark">Les livre de la communautés B-Livre </button>
-        <button  id="utilisateur"  class="btn btn-dark"> Les livres  ajouté  par nos utilisateurs</button><br><br>
-        <button id="magie" class="btn btn-secondary"> <a href="{{ route('livre.magie') }}">Découvrez la magie de B-Livre</a></button>
+        <button  id="communaute" style="margin-right:80px ;" class="btn btn-dark"  >Les livres de la communautés B-Livre </button>
+        <button  id="utilisateur"  class="btn btn-dark"  > Les livres  ajouté  par nos utilisateurs</button><br><br>
+        <button  id="utilisateur"  class="btn btn-dark"  ><a href="{{ route('livre.publication',[
+                'userId' => $userId ]) }}">Découvrez la magie de B-Livre</a></button>
 
    </div><br><br>
 
-     <main id='contenu' >
-            <div id='util'>
+     <main id='contenu'  >
+        <div id="contenant">
+                    <div id='contenu-util'>
 
-                 <div class="alert alert-primary d-flex align-items-center" role="alert" id="util-1" >
-                    <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
-                    <div>
-                        <h4 id="util-1-1">Découvrez une bibliothèque vivante où chaque livre ajouté par nos utilisateurs raconte une histoire unique,
-                            invitant chacun à plonger dans un univers de découvertes et d'émotions</h4>
-                    </div>
-                  </div>
+                        <div class="btn btn-outline-warning  d-flex align-items-center" role="warning" id="util-1" >
+                        <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+                        <div>
+                            <h4 id="util-1-1">Découvrez une bibliothèque vivante où chaque livre ajouté par nos utilisateurs raconte une histoire unique,
+                                invitant chacun à plonger dans un univers de découvertes et d'émotions</h4>
+                        </div>
+                        </div><br>
 
-                <ul id="util-1-2">
-                    <li> <a href="">Fiction </a></li>
-                    <li> <a href="">Aventure </a>/li>
-                    <li> <a href="">Fantastique</a></li>
-                    <li> <a href="">Policier </a></li>
-                    <li><a href="">Science-fiction</a></li>
+                    <ul id="util-1-2">
+                        <li> <a href="{{ route('livre.lecture',['slug'=>'Fiction']) }}">Fiction </a></li>
+                        <li> <a href="{{ route('livre.lecture',['slug'=>'Aventure']) }}">Aventure </a></li>
+                        <li> <a href="{{ route('livre.lecture',['slug'=>'Fantastique']) }}">Fantastique</a></li>
+                        <li> <a href="{{ route('livre.lecture',['slug'=>'Policier']) }}">Policier </a></li>
+                        <li><a href="{{ route('livre.lecture',['slug'=>'Science-fiction']) }}">Science-fiction</a></li>
 
-                </ul>
+                    </ul>
 
-            </div>
+                </div>
+
+                <div id='contenu-comm'>
+
+                        <div class="btn btn-outline-danger d-flex align-items-center" role="danger" id="util-1" >
+                        <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+                        <div>
+                            <h4 id="util-1-1">page toujours en cours de préparation ! .
+                                </h4>
+                        </div>
+                        </div>
+
+
+
+                </div>
+
+
+        </div>
 
 
 
@@ -126,8 +149,25 @@
 
 
             $('#utilisateur').click(function(){
-                        $('#util').fadeIn(2000)  ;
+                        $('#contenu-comm').fadeOut(2000)  ;
+                        $('#contenu-util').fadeIn(2000)  ;
             });
+
+            $('#communaute').click(function(){
+
+                        $('#contenu-util').fadeOut(2000)  ;
+
+                        $('#contenu-comm').fadeIn(2000)  ;
+
+            });
+
+            // $('#magic').click(function(){
+            //         $('#communaute').hide() ;
+            //         $('#utilisateur').hide() ;
+            //         $('#contenant').hide() ;
+            //         $('#magic').hide() ;
+            //         $("#circleButtons").show();
+            // })
 
 
    </script>

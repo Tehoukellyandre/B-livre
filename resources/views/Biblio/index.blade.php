@@ -18,7 +18,7 @@
         à chaque membre de contribuer à la diversité des contenus disponibles sur la plateforme.
        </p> <br>
        <p class="lead">
-         <a href="#"  id="btn-1"class="btn btn-lg btn-light fw-bold border-white bg-white">Aller à la bibliothèque de B-Livre </a>
+         <a href="{{route('Auth.connexion') }}"  id="btn-1"class="btn btn-lg btn-light fw-bold border-white bg-white">Aller à la bibliothèque de B-Livre </a>
        </p>
      </main>
 

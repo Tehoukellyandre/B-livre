@@ -10,10 +10,12 @@
           @endguest
 
           @auth()
+              <a class="nav-link fw-bold py-1 px-0" href="{{ route('livre.store',['userId'=> Auth::user()->id ]) }}">Bibliothque B-Livre</a>
               <form action="{{route('Auth.deconnexion') }}" method="post">
                   @method('delete')
                     @csrf
-                    <button class="nav-link fw-bold py-1 px-0" > Deconnexion</button>
+
+                    <button class="nav-link fw-bold py-1 px-0" > Déconnexion</button>
               </form>
           @endauth
 

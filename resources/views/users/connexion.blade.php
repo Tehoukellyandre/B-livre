@@ -20,7 +20,9 @@
                     <input type="password"  class="form-control" id="mdp" name="password" required="required">
                 </div><br><br>
 
-                 <input type="submit" name="submit" class="btn btn-success">
+                 <input type="submit" name="submit" class="btn btn-outline-warning" value="Connexion">
+
+                 {{-- <button class="btn btn-outline-warning">Inscri</button> --}}
         </div>
 
 
