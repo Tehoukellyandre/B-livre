@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Livre ;
 use App\Http\Requests\CrudRequest ;
+use  App\Models\Utilisateur ;
 // use Illuminate\Support\Facades\validator;
 
 class LivreController extends Controller
@@ -33,11 +34,25 @@ class LivreController extends Controller
 
     }
     function publication(){
-            
-            return view('livre.publication' ,[
 
+            return view('livre.publication' ,[
+                 'livres' => Livre::all()
             ]);
         }
+    function store(Utilisateur $userId){
+
+            return view('livre.bibliotheque',[
+                 'userId' => $userId ,
+            ]) ;
+    }
+    function magie(){
+        return view('livre.magie') ;
+    }
+    function lecture(string $slug){
+        return view('livre.lecture',[
+            'slug' => '$slug'
+        ]) ;
+    }
 
 
     // function supprimer(Livre $livre){
