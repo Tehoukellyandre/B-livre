@@ -44,10 +44,12 @@ class LivreController extends Controller
             ])->with('success','Modification  du livre éffectuer') ;
 
     }
-    function publication(){
-
+    function publication(Utilisateur $userId){
+        $id= $userId->id ;
+        $livre= DB::table('livres')->where('utilisateur_id', $id)->get() ;
             return view('livre.publication' ,[
-
+                    'userId'=> $userId ,
+                    'livres'=> $livre ,
             ]);
         }
     function store(Utilisateur $userId){
