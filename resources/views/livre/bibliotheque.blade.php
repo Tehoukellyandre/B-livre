@@ -86,7 +86,7 @@
                                 invitant chacun à plonger dans un univers de découvertes et d'émotions</h4>
                         </div>
                         </div><br>
-
+                                <h5 class="text-center">Liser selon vos envie</h5>
                     <ul id="util-1-2">
                         <li> <a href="{{ route('livre.lecture',['slug'=>'Fiction']) }}">Fiction </a></li>
                         <li> <a href="{{ route('livre.lecture',['slug'=>'Aventure']) }}">Aventure </a></li>
